@@ -3,7 +3,7 @@ version: '${project.version}'
 main: com.peepo.peepoPlugin.PeepoMain
 api-version: 1.18
 description: Does stuff
-author: Attaxika
+authors: [Attaxika, Nat-os]
 prefix: Peepo Plugin
 commands:
   PeepoPlugin:
