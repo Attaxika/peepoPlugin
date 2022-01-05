@@ -2,7 +2,9 @@
 //Disclaimer : All features are still in the production phase, many features are not yet implemented or lack proper implementation for usage in game
 
 A generic plugin to add functionality and features to Minecraft.
+
 Made for discord.gg/crackheads
+
 Collaborators:
   - Attaxika
   - Nat-os
