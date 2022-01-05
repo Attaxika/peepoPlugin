@@ -1,4 +1,4 @@
-name: peepoPlugin
+name: PeepoPlugin
 version: '${project.version}'
 main: com.peepo.peepoPlugin.PeepoMain
 api-version: 1.18
@@ -7,10 +7,10 @@ authors: [Attaxika, Nat-os]
 prefix: Peepo Plugin
 commands:
   PeepoPlugin:
-    usage: /peepoplugin
+    usage: /PeepoPlugin
     permission: peepoplugin.admin
 permissions:
   peepoplugin.admin:
-    description: Allows access to admin permissions (Eg. /peepoplugin disable)
+    description: Allows access to admin permissions (Eg. /PeepoPlugin disable)
 
 

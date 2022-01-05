@@ -15,6 +15,7 @@ public class CommandsCompleter implements TabCompleter {
         num.add("<0-100>");
         first.add("Accelerate");
         first.add("SlimeRate");
+        first.add("disable");
         if(args.length == 1) {
             return first;
         } else if(args.length == 2) {

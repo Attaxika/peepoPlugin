@@ -8,12 +8,12 @@ import org.bukkit.plugin.Plugin;
 public class Commands implements CommandExecutor {
     /*
      * Technically we should be passing an instance of the plugin to each one of the files we need to access the plugin in
-     * instead of accessing it via the Plugin Manager (Eg. sender.getServer().getPluginManager().getPlugin("PeepoPlugin");)
+     * instead of accessing it via the Plugin Manager (Eg. sender.getServer().getPluginManager().getPlugin("PeepoMain");)
      * but I'm lazy and it breaks things for some reason, so I'll fix it at some other point
      */
 
     String[] commandList = {"disable","slimerate <percentage>","accelerate <percentage>"};
-    String badUsage = "Hmm... Seems like you forgot something. Check out /PeepoPlugin for help with the plugin's commands!";
+    String badUsage = "Hmm... Seems like you forgot something. Check out /PeepoMain for help with the plugin's commands!";
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         try {
@@ -43,7 +43,7 @@ public class Commands implements CommandExecutor {
                     p.saveConfig();
                     return true;
                 case "disable":
-                    sender.getServer().getPluginManager().disablePlugin(sender.getServer().getPluginManager().getPlugin("PeepoMain"));
+                    sender.getServer().getPluginManager().disablePlugin(sender.getServer().getPluginManager().getPlugin("PeepoPlugin"));
                     return true;
             }
         } catch (org.bukkit.command.CommandException e) {

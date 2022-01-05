@@ -16,8 +16,8 @@ private static PeepoMain plugin;
         System.out.println("Loaded PeepoPlugin");
         getServer().getPluginManager().registerEvents(new Listeners(), this);
         //Commands
-        getCommand("PeepoMain").setExecutor(new Commands());
-        getCommand("PeepoMain").setTabCompleter(new CommandsCompleter());
+        getCommand("PeepoPlugin").setExecutor(new Commands());
+        getCommand("PeepoPlugin").setTabCompleter(new CommandsCompleter());
     }
 
     @Override

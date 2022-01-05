@@ -15,9 +15,8 @@ import org.bukkit.persistence.PersistentDataType;
 import java.util.Random;
 
 public class Listeners implements Listener {
-    /*
-     * Technically we should be passing an instance of the plugin to each one of the files we need to access the plugin in
-     * instead of accessing it via the Plugin Manager (Eg. sender.getServer().getPluginManager().getPlugin("PeepoPlugin");)
+    /* Technically we should be passing an instance of the plugin to each one of the files we need to access the plugin in
+     * instead of accessing it via the Plugin Manager (Eg. sender.getServer().getPluginManager().getPlugin("PeepoMain");)
      * but I'm lazy and it breaks things for some reason, so I'll fix it at some other point
      */
 
@@ -25,7 +24,9 @@ public class Listeners implements Listener {
     private int randInt;
     PeepoMain plugin = PeepoMain.getPlugin(); //Comment above shows what I mean by this, but for some reason it crashes...
 
-    //Slime death handler, adds a chance (configurable via config file) to spawn an extra slime on death
+    /* Slime death handler, adds a chance (configurable via config file) to spawn an extra slime on death
+     * "Split" message won't go through since I changed it from "AttaxikaPlugin" to "PeepoPlugin"
+     */
     @EventHandler
     public void onSlimeDeath(EntityDeathEvent event) {
         randInt = rand.nextInt(100);
@@ -42,7 +43,7 @@ public class Listeners implements Listener {
         }
     }
 
-    //Headshot detection, very finicky. Minecraft hit detection is garbage from a range of <5, so the function had to be modified
+    //Headshot detection. Minecraft hit detection is garbage from a range of <5, so the function had to be modified
     @EventHandler
     public void headshotDetection(ProjectileHitEvent event) {
         Entity damaged = event.getHitEntity();
@@ -69,11 +70,12 @@ public class Listeners implements Listener {
         Entity e = (Entity) event.getEntity().getShooter();
         Location loc = e.getLocation();
         randInt = rand.nextInt(100);
-        if(e instanceof Player && randInt <=event.getEntity().getServer().getPluginManager().getPlugin("PeepoMain").getConfig().getInt("Accelerate")) {
+        if(e instanceof Player && randInt <=event.getEntity().getServer().getPluginManager().getPlugin("PeepoPlugin").getConfig().getInt("Accelerate")) {
             e.sendMessage(ChatColor.AQUA + "Accelerate!");
             e.getWorld().spawnParticle(Particle.ELECTRIC_SPARK, loc, 20);
+            e.getWorld().playSound(loc, Sound.BLOCK_NOTE_BLOCK_BELL, 10f, 1.0f);
             event.getEntity().setGlowing(true);
-            event.getEntity().setMetadata("PeepoMain", new FixedMetadataValue(plugin, "accelerated"));
+            event.getEntity().setMetadata("PeepoPlugin", new FixedMetadataValue(plugin, "accelerated"));
             event.getEntity().getVelocity().multiply(3);
         }
     }
