@@ -1,0 +1,16 @@
+name: AttaxikaPlugin
+version: '${project.version}'
+main: com.attaxika.attaxikaplugin.AttaxikaPlugin
+api-version: 1.18
+description: Does stuff
+author: Attaxika
+prefix: Attaxika Plugin
+commands:
+  AttaxikaPlugin:
+    usage: /AttaxikaPlugin
+    permission: attaxikaplugin.admin
+permissions:
+  attaxikaplugin.admin:
+    description: Allows access to admin permissions (Eg. /AttaxikaPlugin disable)
+
+
