@@ -15,11 +15,17 @@ import org.bukkit.persistence.PersistentDataType;
 import java.util.Random;
 
 public class Listeners implements Listener {
+    /*
+     * Technically we should be passing an instance of the plugin to each one of the files we need to access the plugin in
+     * instead of accessing it via the Plugin Manager (Eg. sender.getServer().getPluginManager().getPlugin("PeepoPlugin");)
+     * but I'm lazy and it breaks things for some reason, so I'll fix it at some other point
+     */
+
     Random rand = new Random();
     private int randInt;
-    PeepoMain plugin = PeepoMain.getPlugin();
+    PeepoMain plugin = PeepoMain.getPlugin(); //Comment above shows what I mean by this, but for some reason it crashes...
 
-    //Slimes
+    //Slime death handler, adds a chance (configurable via config file) to spawn an extra slime on death
     @EventHandler
     public void onSlimeDeath(EntityDeathEvent event) {
         randInt = rand.nextInt(100);
@@ -36,6 +42,7 @@ public class Listeners implements Listener {
         }
     }
 
+    //Headshot detection, very finicky. Minecraft hit detection is garbage from a range of <5, so the function had to be modified
     @EventHandler
     public void headshotDetection(ProjectileHitEvent event) {
         Entity damaged = event.getHitEntity();
@@ -53,6 +60,10 @@ public class Listeners implements Listener {
         }
     }
 
+    /* In the works... Trying to figure out how minecraft stores NBT data, need to apply an NBT tag to the arrow
+     * then in the function below, check if the entity damaged was damaged by an arrow with that NBT data.
+     * Alternative could be storing & reading data to and from a file? Not sure about the impact to performance regarding this
+     */
     @EventHandler
     public void accelerateProj(ProjectileLaunchEvent event) {
         Entity e = (Entity) event.getEntity().getShooter();
@@ -67,6 +78,9 @@ public class Listeners implements Listener {
         }
     }
 
+    /* See above comment
+     * For more info
+     */
     @EventHandler
     public void acceleratorHit(ProjectileHitEvent event) {
         Entity damaged = event.getHitEntity();
@@ -78,6 +92,9 @@ public class Listeners implements Listener {
         }
     }
 
+    /* Also in the works, same thing as above
+     *
+     */
     @EventHandler
     public void pvpLogger(EntityDamageByEntityEvent event) {
         Entity damager = event.getDamager();
