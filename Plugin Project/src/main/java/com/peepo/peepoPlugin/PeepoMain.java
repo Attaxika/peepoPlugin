@@ -13,16 +13,16 @@ private static PeepoMain plugin;
         getConfig().options().copyDefaults();
         saveDefaultConfig();
         //Register Event Listeners
-        System.out.println("Loaded Attaxika Plugin");
+        System.out.println("Loaded PeepoPlugin");
         getServer().getPluginManager().registerEvents(new Listeners(), this);
         //Commands
-        getCommand("AttaxikaPlugin").setExecutor(new Commands());
-        getCommand("AttaxikaPlugin").setTabCompleter(new CommandsCompleter());
+        getCommand("PeepoMain").setExecutor(new Commands());
+        getCommand("PeepoMain").setTabCompleter(new CommandsCompleter());
     }
 
     @Override
     public void onDisable() {
-        System.out.println("Attaxika Plugin Disabled, view error code/reason below");
+        System.out.println("PeepoPlugin Disabled, view error code/reason below");
         System.out.println("Error Code: " + getErrCode());
         switch(getErrCode()) {
             default:

@@ -26,7 +26,7 @@ public class Listeners implements Listener {
         if(event.getEntityType() == EntityType.SLIME) {
             Slime s = (Slime) event.getEntity();
             Slime slime;
-            if(randInt <= event.getEntity().getServer().getPluginManager().getPlugin("AttaxikaPlugin").getConfig().getInt("SlimeRate") && event.getEntity().getKiller() != null && s.getSize() <= 1) {
+            if(randInt <= event.getEntity().getServer().getPluginManager().getPlugin("PeepoPlugin").getConfig().getInt("SlimeRate") && event.getEntity().getKiller() != null && s.getSize() <= 1) {
                 s.getKiller().sendMessage(ChatColor.GREEN + "Split!");
                 Location loc = s.getLocation();
                 slime = (Slime) s.getWorld().spawn(loc, Slime.class);
@@ -58,11 +58,11 @@ public class Listeners implements Listener {
         Entity e = (Entity) event.getEntity().getShooter();
         Location loc = e.getLocation();
         randInt = rand.nextInt(100);
-        if(e instanceof Player && randInt <=event.getEntity().getServer().getPluginManager().getPlugin("AttaxikaPlugin").getConfig().getInt("Accelerate")) {
+        if(e instanceof Player && randInt <=event.getEntity().getServer().getPluginManager().getPlugin("PeepoMain").getConfig().getInt("Accelerate")) {
             e.sendMessage(ChatColor.AQUA + "Accelerate!");
             e.getWorld().spawnParticle(Particle.ELECTRIC_SPARK, loc, 20);
             event.getEntity().setGlowing(true);
-            event.getEntity().setMetadata("AttaxikaPlugin", new FixedMetadataValue(plugin, "accelerated"));
+            event.getEntity().setMetadata("PeepoMain", new FixedMetadataValue(plugin, "accelerated"));
             event.getEntity().getVelocity().multiply(3);
         }
     }

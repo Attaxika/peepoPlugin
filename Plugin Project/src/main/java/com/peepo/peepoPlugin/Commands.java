@@ -39,7 +39,7 @@ public class Commands implements CommandExecutor {
                     p.saveConfig();
                     return true;
                 case "disable":
-                    sender.getServer().getPluginManager().disablePlugin(sender.getServer().getPluginManager().getPlugin("AttaxikaPlugin"));
+                    sender.getServer().getPluginManager().disablePlugin(sender.getServer().getPluginManager().getPlugin("PeepoMain"));
                     return true;
             }
         } catch (org.bukkit.command.CommandException e) {
