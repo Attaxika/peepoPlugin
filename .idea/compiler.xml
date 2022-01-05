@@ -6,11 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="PeepoPlugin" />
+        <module name="peepoPlugin" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="PeepoPlugin" target="1.8" />
+      <module name="peepoPlugin" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

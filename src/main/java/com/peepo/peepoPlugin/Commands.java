@@ -3,8 +3,6 @@ package com.peepo.peepoPlugin;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-import org.bukkit.configuration.Configuration;
-import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 
 public class Commands implements CommandExecutor {
