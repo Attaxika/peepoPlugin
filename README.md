@@ -1,5 +1,6 @@
 # peepoPlugin
-//Disclaimer : All features are still in the production phase, many features are not yet implemented or lack proper 
+//Disclaimer : All features are still in the production phase, many features are not yet implemented or lack proper implementation for usage in game
+
 A generic plugin to add functionality and features to Minecraft.
 Made for discord.gg/crackheads
 Collaborators:
@@ -12,3 +13,4 @@ Functionalities added:
       - Slimes: Configurable rate for slimes to split
       - ...
   - Random chance to have an arrow accelerate, dealing more damage
+  - PvP logger
