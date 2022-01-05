@@ -1,11 +1,10 @@
-package com.attaxika.attaxikaplugin;
+package com.peepo.peepoPlugin;
 
-import org.bukkit.command.Command;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public final class AttaxikaPlugin extends JavaPlugin {
+public final class PeepoMain extends JavaPlugin {
 private static int errCode = 0;
-private static AttaxikaPlugin plugin;
+private static PeepoMain plugin;
 
     @Override
     public void onEnable() {
@@ -45,7 +44,7 @@ private static AttaxikaPlugin plugin;
         return errCode;
     }
 
-    public static AttaxikaPlugin getPlugin() {
+    public static PeepoMain getPlugin() {
         return plugin;
     }
 
