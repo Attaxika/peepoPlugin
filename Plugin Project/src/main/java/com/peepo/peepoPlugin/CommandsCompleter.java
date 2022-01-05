@@ -1,4 +1,4 @@
-package com.attaxika.attaxikaplugin;
+package com.peepo.peepoPlugin;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;

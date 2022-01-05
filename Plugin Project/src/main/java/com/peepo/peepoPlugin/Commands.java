@@ -1,4 +1,4 @@
-package com.attaxika.attaxikaplugin;
+package com.peepo.peepoPlugin;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -9,11 +9,11 @@ import org.bukkit.plugin.Plugin;
 
 public class Commands implements CommandExecutor {
     String[] commandList = {"disable","slimerate <percentage>","accelerate <percentage>"};
-    String badUsage = "Hmm... Seems like you forgot something. Check out /AttaxikaPlugin for help with the plugin's commands!";
+    String badUsage = "Hmm... Seems like you forgot something. Check out /PeepoPlugin for help with the plugin's commands!";
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         try {
-            Plugin p = sender.getServer().getPluginManager().getPlugin("AttaxikaPlugin");
+            Plugin p = sender.getServer().getPluginManager().getPlugin("PeepoPlugin");
             if(args[0] == "" || args[0] == null || args[0].isEmpty() || args[0].length() <= 0 || args[0].toString() == "null" || args[0].toString() == "") {
                 return true;
             }

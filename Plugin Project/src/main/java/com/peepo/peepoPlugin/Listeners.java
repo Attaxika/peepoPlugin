@@ -1,4 +1,4 @@
-package com.attaxika.attaxikaplugin;
+package com.peepo.peepoPlugin;
 
 import org.bukkit.*;
 import org.bukkit.entity.*;
@@ -8,20 +8,16 @@ import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDeathEvent;
 import org.bukkit.event.entity.ProjectileHitEvent;
 import org.bukkit.event.entity.ProjectileLaunchEvent;
-import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.metadata.FixedMetadataValue;
-import org.bukkit.metadata.MetadataValue;
 import org.bukkit.persistence.PersistentDataContainer;
 import org.bukkit.persistence.PersistentDataType;
-import org.bukkit.plugin.Plugin;
 
 import java.util.Random;
 
 public class Listeners implements Listener {
     Random rand = new Random();
     private int randInt;
-    AttaxikaPlugin plugin = AttaxikaPlugin.getPlugin();
+    PeepoMain plugin = PeepoMain.getPlugin();
 
     //Slimes
     @EventHandler
@@ -76,7 +72,7 @@ public class Listeners implements Listener {
         Entity damaged = event.getHitEntity();
         Entity proj = event.getEntity();
         PersistentDataContainer projData = proj.getPersistentDataContainer();
-        if(proj instanceof Arrow && projData.has(new NamespacedKey(AttaxikaPlugin.getPlugin(), "Accelerate"), PersistentDataType.STRING)) {
+        if(proj instanceof Arrow && projData.has(new NamespacedKey(PeepoMain.getPlugin(), "Accelerate"), PersistentDataType.STRING)) {
             damaged.getServer().broadcastMessage("Test");
             ((Arrow) proj).setKnockbackStrength(((Arrow) proj).getKnockbackStrength() * 3);
         }

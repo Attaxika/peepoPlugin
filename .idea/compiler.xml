@@ -6,11 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="AttaxikaPlugin" />
+        <module name="PeepoPlugin" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="AttaxikaPlugin" target="1.8" />
+      <module name="PeepoPlugin" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -1,16 +1,16 @@
-name: AttaxikaPlugin
+name: peepoPlugin
 version: '${project.version}'
-main: com.attaxika.attaxikaplugin.AttaxikaPlugin
+main: com.peepo.peepoPlugin.PeepoMain
 api-version: 1.18
 description: Does stuff
 author: Attaxika
-prefix: Attaxika Plugin
+prefix: Peepo Plugin
 commands:
-  AttaxikaPlugin:
-    usage: /AttaxikaPlugin
-    permission: attaxikaplugin.admin
+  PeepoPlugin:
+    usage: /peepoplugin
+    permission: peepoplugin.admin
 permissions:
-  attaxikaplugin.admin:
-    description: Allows access to admin permissions (Eg. /AttaxikaPlugin disable)
+  peepoplugin.admin:
+    description: Allows access to admin permissions (Eg. /peepoplugin disable)
 
 
