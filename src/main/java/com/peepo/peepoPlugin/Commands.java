@@ -10,6 +10,11 @@ public class Commands implements CommandExecutor {
      * Technically we should be passing an instance of the plugin to each one of the files we need to access the plugin in
      * instead of accessing it via the Plugin Manager (Eg. sender.getServer().getPluginManager().getPlugin("PeepoMain");)
      * but I'm lazy and it breaks things for some reason, so I'll fix it at some other point
+     *
+     * Also, my commands are SUPER scuffed...
+     * /peepoPlugin causes some sort of internal error
+     * Error-handling is near non-existent
+     * Planning on fixing at some other point
      */
 
     String[] commandList = {"disable","slimerate <percentage>","accelerate <percentage>"};
