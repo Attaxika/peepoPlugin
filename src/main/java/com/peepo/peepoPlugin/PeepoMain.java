@@ -8,7 +8,6 @@ private static PeepoMain plugin;
 
     @Override
     public void onEnable() {
-
         //Config
         getConfig().options().copyDefaults();
         saveDefaultConfig();
@@ -22,26 +21,7 @@ private static PeepoMain plugin;
 
     @Override
     public void onDisable() {
-        System.out.println("PeepoPlugin Disabled, view error code/reason below");
-        System.out.println("Error Code: " + getErrCode());
-        switch(getErrCode()) {
-            default:
-                break;
-            case 0:
-                System.out.println("Default shutdown");
-            case 1:
-                System.out.println("Shutdown via command.");
-            case 2:
-                System.out.println("Unknown shutdown.");
-        }
-    }
-
-    public static void setErrCode(int e) {
-        errCode = e;
-    }
-
-    public static int getErrCode() {
-        return errCode;
+        System.out.println("PeepoPlugin Disabled");
     }
 
     public static PeepoMain getPlugin() {

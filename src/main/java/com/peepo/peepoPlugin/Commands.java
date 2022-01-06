@@ -18,7 +18,6 @@ public class Commands implements CommandExecutor {
      * Planning on fixing at some other point
      */
 
-    String[] commandList = {"disable","slimerate <percentage>","accelerate <percentage>"};
     String badUsage = "Hmm... Seems like you forgot something. Check out /PeepoMain for help with the plugin's commands!";
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
