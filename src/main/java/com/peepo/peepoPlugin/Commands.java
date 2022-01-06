@@ -13,7 +13,8 @@ public class Commands implements CommandExecutor {
      *
      * Also, my commands are SUPER scuffed...
      * /peepoPlugin causes some sort of internal error
-     * Error-handling is near non-existent
+     * Error-handling is near non-existent (You can see at the bottom, the catch statement tries to catch it, but nothing happens)
+     * Furthermore, even for checking for arguments, it doesn't work. Not sure why that is.
      * Planning on fixing at some other point
      */
 
