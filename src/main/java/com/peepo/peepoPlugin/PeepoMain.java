@@ -8,6 +8,7 @@ private static PeepoMain plugin;
 
     @Override
     public void onEnable() {
+        plugin = this;
         //Config
         getConfig().options().copyDefaults();
         saveDefaultConfig();

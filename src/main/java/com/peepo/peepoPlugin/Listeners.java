@@ -15,14 +15,9 @@ import org.bukkit.persistence.PersistentDataType;
 import java.util.Random;
 
 public class Listeners implements Listener {
-    /* Technically we should be passing an instance of the plugin to each one of the files we need to access the plugin in
-     * instead of accessing it via the Plugin Manager (Eg. sender.getServer().getPluginManager().getPlugin("PeepoMain");)
-     * but I'm lazy and it breaks things for some reason, so I'll fix it at some other point
-     */
-
     Random rand = new Random();
     private int randInt;
-    PeepoMain plugin = PeepoMain.getPlugin(); //Comment above shows what I mean by this, but for some reason it crashes...
+    PeepoMain plugin = PeepoMain.getPlugin(); //Plugin instance
 
     /* Slime death handler, adds a chance (configurable via config file) to spawn an extra slime on death
      * "Split" message won't go through since I changed it from "AttaxikaPlugin" to "PeepoPlugin"
@@ -33,7 +28,7 @@ public class Listeners implements Listener {
         if(event.getEntityType() == EntityType.SLIME) {
             Slime s = (Slime) event.getEntity();
             Slime slime;
-            if(randInt <= event.getEntity().getServer().getPluginManager().getPlugin("PeepoPlugin").getConfig().getInt("SlimeRate") && event.getEntity().getKiller() != null && s.getSize() <= 1) {
+            if(randInt <= plugin.getConfig().getInt("SlimeRate") && event.getEntity().getKiller() != null && s.getSize() > 1) {
                 s.getKiller().sendMessage(ChatColor.GREEN + "Split!");
                 Location loc = s.getLocation();
                 slime = (Slime) s.getWorld().spawn(loc, Slime.class);
@@ -70,7 +65,7 @@ public class Listeners implements Listener {
         Entity e = (Entity) event.getEntity().getShooter();
         Location loc = e.getLocation();
         randInt = rand.nextInt(100);
-        if(e instanceof Player && randInt <=event.getEntity().getServer().getPluginManager().getPlugin("PeepoPlugin").getConfig().getInt("Accelerate")) {
+        if(e instanceof Player && randInt <=plugin.getConfig().getInt("Accelerate")) {
             e.sendMessage(ChatColor.AQUA + "Accelerate!");
             e.getWorld().spawnParticle(Particle.ELECTRIC_SPARK, loc, 20);
             e.getWorld().playSound(loc, Sound.BLOCK_NOTE_BLOCK_BELL, 10f, 1.0f);

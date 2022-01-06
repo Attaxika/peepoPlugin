@@ -6,12 +6,8 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.Plugin;
 
 public class Commands implements CommandExecutor {
-    /*
-     * Technically we should be passing an instance of the plugin to each one of the files we need to access the plugin in
-     * instead of accessing it via the Plugin Manager (Eg. sender.getServer().getPluginManager().getPlugin("PeepoMain");)
-     * but I'm lazy and it breaks things for some reason, so I'll fix it at some other point
-     *
-     * Also, my commands are SUPER scuffed...
+
+    /* Also, my commands are SUPER scuffed...
      * /peepoPlugin causes some sort of internal error
      * Error-handling is near non-existent (You can see at the bottom, the catch statement tries to catch it, but nothing happens)
      * Furthermore, even for checking for arguments, it doesn't work. Not sure why that is.
@@ -22,7 +18,7 @@ public class Commands implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         try {
-            Plugin p = sender.getServer().getPluginManager().getPlugin("PeepoPlugin");
+            Plugin p = PeepoMain.getPlugin();
             if(args[0] == "" || args[0] == null || args[0].isEmpty() || args[0].length() <= 0 || args[0].toString() == "null" || args[0].toString() == "") {
                 return true;
             }
@@ -48,7 +44,7 @@ public class Commands implements CommandExecutor {
                     p.saveConfig();
                     return true;
                 case "disable":
-                    sender.getServer().getPluginManager().disablePlugin(sender.getServer().getPluginManager().getPlugin("PeepoPlugin"));
+                    sender.getServer().getPluginManager().disablePlugin(p);
                     return true;
             }
         } catch (org.bukkit.command.CommandException e) {
